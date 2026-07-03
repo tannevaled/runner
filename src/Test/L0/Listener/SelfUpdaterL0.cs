@@ -16,6 +16,7 @@ using Xunit;
 
 namespace GitHub.Runner.Common.Tests.Listener
 {
+#if !S390X  // Self-update is not currently supported on s390x
     public sealed class SelfUpdaterL0
     {
         private Mock<IRunnerServer> _runnerServer;
@@ -291,5 +292,5 @@ namespace GitHub.Runner.Common.Tests.Listener
             }
         }
     }
-}
 #endif
+}
